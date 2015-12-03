@@ -1,4 +1,4 @@
-
+8
 # 原子クラス
 class Atom
 
@@ -40,6 +40,7 @@ end
 
 t = ARGV[0].to_i		# 原子の移動回数t
 i = 0					# カウンタ
+file  = open("./result/time=#{t}.txt","a")
 
 atom = Atom.new
 # 原子をt回移動
@@ -47,4 +48,4 @@ while(i < t)
 	atom.step		# 原子を移動
 	i += 1
 end
-p atom.judge	# 原子が枠内にあるか判定
+file.puts( atom.judge )	# 原子が枠内にあるか判定 ファイルに出力
